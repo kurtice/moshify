@@ -1,3 +1,8 @@
-body {
-  background: gold;
+/* 套路:定义使用的全局变量 */
+:root {
+  --color-primary: #2584ff;
+  --color-secondary: #00d9ff;
+  --color-accent: #ff3400;
+  --color-heading: #1b0760;
+  --color-body: #918ca4;
 }
