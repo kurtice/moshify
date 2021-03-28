@@ -8,6 +8,7 @@
   --color-body: #918ca4;
 }
 
+/* Typography */
 html {
   /* 套路: 使用rem单位; 默认浏览器的font-size为16px */
   /* 62.5% = 16px * 62.5% = 10px = 1 rem */
@@ -42,6 +43,7 @@ p {
   margin-top: 0;
 }
 
+/* 套路: 媒体查询 */
 @media screen and (min-width: 1024px) {
   body {
     font-size: 1.8rem;
@@ -54,5 +56,34 @@ p {
   }
   h3 {
     font-size: 2.4rem;
+  }
+}
+
+/* links */
+a {
+  text-decoration: none;
+}
+
+.link-arrow {
+  color: var(--color-accent);
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.link-arrow::after {
+  content: "-->";
+  margin-left: 5px;
+  transition: margin 0.2s;
+}
+
+.link-arrow:hover::after {
+  /* 套路: 这个选择器表示: 鼠标悬浮后, ::after伪元素样式 */
+  margin-left: 10px;
+}
+
+@media screen and (min-width: 1024px) {
+  .link-arrow {
+    font-size: 1.5rem;
   }
 }
