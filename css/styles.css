@@ -88,6 +88,7 @@ a {
   }
 }
 
+/* badges */
 .badge {
   border-radius: 20px;
   font-size: 2rem;
@@ -119,5 +120,40 @@ a {
   }
   .badge--small {
     font-size: 1.2rem;
+  }
+}
+
+/* Lists */
+.list {
+  padding-left: 0;
+  list-style: none;
+  color: var(--color-heading);
+}
+
+.list--inline .list__item {
+  display: inline-block;
+  margin-right: 2rem;
+}
+
+.list--tick {
+  list-style-image: url(../images/tick.svg);
+  /* 两种方法可以实现tick显示 */
+  /* 1. 使用padding-left, Mosh方法 */
+  padding-left: 3rem;
+  /* 2. 使用list-style-position
+  list-style-position: inside;  
+  这样tick就紧挨着容器做边框, 之后使用adding-left
+  padding-left: 1rem;
+  */
+}
+
+.list--tick .list__item {
+  padding-left: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .list--tick .list__item {
+    padding-left: 0;
   }
 }
