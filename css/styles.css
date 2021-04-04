@@ -242,3 +242,24 @@ a {
     font-size: 1.5rem;
   }
 }
+
+/* Inputs */
+.input {
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  color: var(--color-heading);
+  font-size: 2rem;
+  outline: none; /* 套路:点击输入框不显示外框 */
+  padding: 1.5rem 3.5rem;
+}
+
+/* 套路:使用伪元素设置占位符样式 */
+::placeholder {
+  color: #cdcbd7;
+}
+
+@media screen and (min-width: 1024px) {
+  .input {
+    font-size: 1.5rem;
+  }
+}
