@@ -217,6 +217,13 @@ a {
   white-space: nowrap; /* 文本非强制不换行; 如果容器不够容纳字符, 也不会让字符自动换行 */
 }
 
+.btn .icon {
+  height: 2rem;
+  width: 2rem;
+  margin-right: 1rem;
+  vertical-align: middle;
+}
+
 .btn--primary {
   background: var(--color-primary);
   color: #fff;
@@ -292,7 +299,7 @@ a {
 .input-group .input {
   border: 0;
   flex-grow: 1;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 2rem;
 }
 .input-group .btn {
   margin: 4px;
@@ -695,5 +702,32 @@ a {
   .hero__content {
     text-align: left;
     align-self: center;
+  }
+}
+
+/* Domain block */
+.block-domain .input-group {
+  box-shadow: 0 0 30px 20px #ecebee;
+  margin: 4rem auto;
+  max-width: 670px;
+  border: 0;
+}
+
+.block-domain__price {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 6rem);
+  font-size: 2rem;
+  font-weight: 600;
+  justify-items: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .block-domain__price {
+    /* display: flex;
+    justify-content: space-around; */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
 }
