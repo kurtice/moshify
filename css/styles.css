@@ -761,6 +761,30 @@ a {
   gap: 8rem 4rem;
 }
 
-/* @media screen and (min-width:768px) {
-  
-} */
+/* Features */
+.feature {
+  gap: 4rem 2rem;
+  margin: 12rem 0;
+}
+.feature__image {
+  width: 100%;
+}
+
+.feature__heading {
+  font-size: 2.8rem;
+  margin: 1rem 0;
+}
+
+.feature__content {
+  font-size: 2rem;
+}
+
+.feature:first-of-type {
+  margin-top: 6rem;
+}
+
+@media screen and (min-width: 768px) {
+  .feature:nth-of-type(even) .feature__content {
+    order: 2;
+  }
+}
