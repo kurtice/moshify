@@ -30,6 +30,9 @@ body {
   line-height: 1.5; /* 套路:使行之间间距加大, 为font-size的1,5倍 */
   color: var(--color-body);
 }
+img {
+  width: 100%;
+}
 
 h1,
 h2,
@@ -136,9 +139,8 @@ a {
 
 /* Lists */
 .list {
-  padding-left: 0;
   list-style: none;
-  color: var(--color-heading);
+  padding-left: 0;
 }
 
 .list--inline .list__item {
@@ -211,7 +213,8 @@ a {
   font-weight: 500;
   margin: 1rem 0;
   outline: 0; /* 去除按钮被点击时出现的外边框 */
-  padding: 2rem 3rem;
+  /* padding: 2rem 3rem; */
+  padding: 2rem 4vw; /* = 4%vw */
   text-align: center;
   text-transform: uppercase;
   white-space: nowrap; /* 文本非强制不换行; 如果容器不够容纳字符, 也不会让字符自动换行 */
@@ -300,6 +303,7 @@ a {
   border: 0;
   flex-grow: 1;
   padding: 1.5rem 2rem;
+  width: 0; /* 解决在小屏幕上, 按钮被输入框挤出input-group的问题 */
 }
 .input-group .btn {
   margin: 4px;
@@ -431,6 +435,8 @@ a {
   margin-top: 1rem;
 }
 
+/* Quotes */
+
 .quote {
   font-style: 3rem;
   font-style: italic;
@@ -517,6 +523,11 @@ a {
   .testimonial {
     padding: 3rem;
   }
+
+  .testimonial .quote {
+    margin: 5rem 0 0 6rem;
+  }
+
   .testimonial__image .quote,
   .testimonial__image .quote__author {
     font-size: 2.4rem;
@@ -632,17 +643,16 @@ a {
 }
 .block--skewed-right {
   padding-bottom: calc(var(--padding-vertical) + 4rem);
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 95%);
 }
 .block--skewed-left {
   padding-bottom: calc(var(--padding-vertical) + 4rem);
-  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 0% 100%);
 }
 
 .container {
   max-width: 1140px;
   margin: 0 auto;
-  /* border: 2px solid red; */
 }
 /* Navigation Bar */
 .nav {
@@ -662,6 +672,10 @@ a {
 .nav__item {
   padding: 0.5rem 2rem;
   border-bottom: 1px solid #222;
+}
+
+.nav__item:last-of-type {
+  border-bottom: none;
 }
 
 .nav__item > a {
@@ -686,6 +700,7 @@ a {
 }
 .nav__brand {
   transform: translateY(5px);
+  width: 150px;
 }
 
 @media screen and (min-width: 768px) {
@@ -733,15 +748,16 @@ a {
 
 /* Domain block */
 .block-domain .input-group {
+  border: 0;
   box-shadow: 0 0 30px 20px #ecebee;
   margin: 4rem auto;
   max-width: 670px;
-  border: 0;
 }
 
 .block-domain__price {
+  color: var(--color-heading);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 6rem);
   font-size: 2rem;
   font-weight: 600;
@@ -796,6 +812,24 @@ a {
   }
 }
 
+/* Showcase Block */
+.block-showcase {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 95%);
+}
+
+.block-showcase__image {
+  width: 100%;
+}
+
+.block-showcase .list__item {
+  margin-bottom: 4rem;
+}
+
+@media screen and (min-width: 768px) {
+  .block-showcase .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 /* Footer */
 .footer {
   background: #232323;
@@ -808,6 +842,10 @@ a {
 .footer a:hover {
   color: #fff;
 }
+.footer__sections {
+  margin-top: 4rem;
+}
+
 .footer__section {
   padding: 2rem;
   border-bottom: 1px solid #393939;
@@ -820,6 +858,7 @@ a {
 .footer__heading {
   font-size: 2.5rem;
   font-weight: 600;
+  line-height: 1.5;
 }
 
 .footer__brand {
@@ -869,4 +908,10 @@ a {
   .footer .a:hover {
     color: #fff;
   }
+}
+
+/* Sign-up Callout */
+
+.callout-signup {
+  transform: translateY(5rem);
 }
